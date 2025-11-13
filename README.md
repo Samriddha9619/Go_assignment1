@@ -41,9 +41,10 @@ Database:
 - PostgreSQL (hosted on Aiven)  
 
 Scraping:  
-- ChromeDP (headless browser automation)  
-- cdproto (Chrome DevTools Protocol)  
-
+- Colly (initial static scraper)  
+- ChromeDP (headless browser automation for dynamic content)  
+- cdproto (Chrome DevTools Protocol)
+  
 Authentication:  
 - JWT (golang-jwt/jwt)  
 - bcrypt (password hashing)  
@@ -96,12 +97,21 @@ Environment Management:
 
 ## Scraper & Scheduler
 
-- ChromeDP is used to scrape dynamic content from MakeMyTrip and Goibibo  
-- If scraping fails, mock data is returned to maintain frontend functionality  
-- Scraped data is deduplicated and stored with timestamps  
-- Price history is recorded for each hotel  
-- Scheduler runs every 2 hours using robfig/cron  
-- Manual scraping can be triggered via API  
+The scraper was initially built using Colly, a fast and lightweight Go library for scraping static websites. However, hotel platforms like MakeMyTrip and Goibibo load listings dynamically using JavaScript, which Colly cannot handle. To overcome this, the scraper was rebuilt using ChromeDP, which automates a headless Chrome browser and can interact with JavaScript-rendered content.
+
+The scraping flow includes:
+- Launching headless Chrome
+- Navigating to hotel listing pages
+- Waiting for dynamic content to load
+- Extracting hotel name, price, rating, and location
+- Storing results in the database with upsert logic
+- Recording price history for each hotel
+- Logging each scraping operation
+
+If scraping fails due to network issues or site structure changes, the system falls back to mock data to ensure frontend continuity.
+
+The scheduler runs every 2 hours using robfig/cron. It triggers scraping for all supported cities and updates the database with fresh prices. Manual scraping can also be triggered via a protected API endpoint.
+
 
 ## Environment Variables
 
