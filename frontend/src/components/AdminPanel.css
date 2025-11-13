@@ -1,0 +1,159 @@
+.admin-panel {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.admin-panel h1 {
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.admin-section {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-section h2 {
+  color: #333;
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.scrape-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #646cff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.scrape-button:hover:not(:disabled) {
+  background-color: #535bf2;
+}
+
+.scrape-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.success-message {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+.error-message {
+  background-color: #ffebee;
+  color: #d32f2f;
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+.logs-container,
+.users-container {
+  overflow-x: auto;
+}
+
+.logs-table,
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.logs-table th,
+.users-table th {
+  background-color: #f5f5f5;
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #ddd;
+}
+
+.logs-table td,
+.users-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #eee;
+}
+
+.logs-table tr:hover,
+.users-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.status-success {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status-failed {
+  background-color: #ffebee;
+  color: #d32f2f;
+}
+
+.status-pending {
+  background-color: #fff3e0;
+  color: #f57c00;
+}
+
+.role-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.role-admin {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.role-user {
+  background-color: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.error-cell {
+  color: #d32f2f;
+  font-size: 0.9rem;
+  max-width: 300px;
+  word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .admin-panel {
+    padding: 1rem;
+  }
+
+  .logs-table,
+  .users-table {
+    font-size: 0.85rem;
+  }
+
+  .logs-table th,
+  .logs-table td,
+  .users-table th,
+  .users-table td {
+    padding: 0.5rem;
+  }
+}
+

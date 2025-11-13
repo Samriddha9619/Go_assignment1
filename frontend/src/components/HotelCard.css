@@ -1,0 +1,85 @@
+.hotel-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hotel-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.hotel-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.hotel-card-header h3 {
+  margin: 0;
+  color: #333;
+  flex: 1;
+  font-size: 1.25rem;
+}
+
+.hotel-city {
+  background-color: #646cff;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.hotel-location {
+  color: #666;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.hotel-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+  padding: 0.75rem;
+  background-color: #f5f5f5;
+  border-radius: 6px;
+}
+
+.price-label {
+  color: #666;
+  font-weight: 500;
+}
+
+.price-value {
+  color: #646cff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.history-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #646cff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 1rem;
+}
+
+.history-button:hover:not(:disabled) {
+  background-color: #535bf2;
+}
+
+.history-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
